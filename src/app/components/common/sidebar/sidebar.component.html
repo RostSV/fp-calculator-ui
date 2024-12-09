@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary">
+  <div class="container">
+    <div class="d-flex justify-content-center align-items-center">
+      <img ngSrc="assets/head.svg" alt="head" class="img-fluid me-2" id="img-big" height="60" width="60">
+      <h2 class="fw-bold m-0">fp<span class="text-primary">.</span>learn</h2>
+    </div>
+    <button class="navbar-togler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-item active">
+        <i class="fa-solid fa-gear"></i>
+        Dashboard
+      </div>
+      <div class="navbar-item">Dashboard</div>
+      <div class="navbar-item">Dashboard</div>
+      <div class="navbar-item">Dashboard</div>
+      <app-search *ngIf="!largeScreen"></app-search>
+    </div>
+  </div>
+</nav>

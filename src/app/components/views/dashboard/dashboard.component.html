@@ -1,0 +1,9 @@
+<app-container>
+  <section class="col-12">
+    <div class="actions row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 g-lg-5">
+      <app-action-card [title]="'Show activity'" [imageName]="'calculator'"></app-action-card>
+      <app-action-card [title]="'Show activity'" [imageName]="'calculator'"></app-action-card>
+      <app-action-card (click)="goTo('compare')" [title]="'Compare assignments'" [imageName]="'computer'"></app-action-card>
+    </div>
+  </section>
+</app-container>
