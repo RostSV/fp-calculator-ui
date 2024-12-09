@@ -1,0 +1,53 @@
+<div class="upload-container">
+  <input accept="{{fileAccept}}" style="opacity:0; position: absolute" type="file" #fileDropRef id="fileDropRef" multiple (change)="onFileInputChange($event)" />
+  <div class="header-section">
+    <div class="header-content">
+      <div class="header-wrapper">
+        <div class="header-info">
+          <h1 class="header-title">Media Upload</h1>
+          <p class="header-description">
+            Add your documents here, and you can upload up to 5 files max
+          </p>
+        </div>
+          <i class="fa-solid fa-xmark" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></i>
+      </div>
+    </div>
+  </div>
+  <div
+    class="upload-area"
+    tabindex="0"
+    role="button"
+    aria-label="Click or drag files to upload"
+    (drop)="onFileDrop($event)"
+    (dragover)="onDragOver($event)"
+    (dragleave)="onDragLeave()"
+    [ngClass]="{'file-is-over': isFileOver}"
+  >
+    <img
+      loading="lazy"
+      src="assets/upload.png"
+      alt=""
+      class="upload-icon"
+    />
+    <div class="upload-content">
+      <div class="upload-text">
+        <span class="upload-instruction custom-font">Drag your file(s) or</span>
+        <span (click)="onUploadClick()" class="upload-browse">browse</span>
+      </div>
+      <p class="upload-limit">Max 10 MB files are allowed</p>
+    </div>
+  </div>
+  <p class="file-types">Only support .xsl, zip files</p>
+
+  <div class="uploaded-files mt-2">
+    <div class="row row-cols-1 row-cols-md-2 gap-0">
+      <div *ngFor="let file of uploadedFiles" class="col-12 g-2 col-md-6">
+        <app-file-card  [file]="file"></app-file-card>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end mt-3">
+      <button class="btn btn-primary" (click)="onSubmit()" [disabled]="uploadedFiles.length < 2" >Confirm</button>
+    </div>
+  </div>
+
+</div>

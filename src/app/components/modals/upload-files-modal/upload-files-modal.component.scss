@@ -1,0 +1,142 @@
+$font-family_1: Barlow, sans-serif;
+$font-family_2: Inter, sans-serif;
+
+.file-is-over{
+  opacity: 0.6;
+  transition: 0.2s ease-in-out all;
+}
+
+.upload-container {
+  transition: 0.2s ease-in-out all;
+  border: none;
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  padding: 20px;
+}
+.header-section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.header-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+  flex-wrap: wrap;
+  i{
+    font-size:1.5rem;
+  }
+}
+.header-info {
+  align-self: stretch;
+  display: flex;
+  min-width: 240px;
+  flex-direction: column;
+  font-family: $font-family_1;
+  flex: 1;
+  flex-basis: 0%;
+  margin: auto 0;
+}
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+.header-description {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+.header-icon {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 24px;
+  margin: auto 0;
+}
+.header-image {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 24px;
+  align-self: stretch;
+  margin: auto 0;
+}
+.upload-area {
+  justify-content: center;
+  border-radius: 1rem;
+  border: 2px dashed #292929;
+  display: flex;
+  margin-top: 16px;
+  width: 100%;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 20px;
+}
+.upload-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 36px;
+  align-self: center;
+}
+.upload-content {
+  display: flex;
+  margin-top: 12px;
+  width: 100%;
+  flex-direction: column;
+}
+.upload-text {
+  display: flex;
+  width: 100%;
+  gap: 4px;
+  font-family: $font-family_2;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.upload-instruction {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+.custom-font {
+  font-family: $font-family_1;
+  font-weight: 500;
+  line-height: 17px;
+}
+.upload-browse {
+  font-weight: 600;
+}
+.upload-limit {
+  text-align: center;
+  margin: 8px 0 0;
+  font: 500 14px Barlow, sans-serif;
+}
+.file-types {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 16px 0 0;
+  font: 500 14px Barlow, sans-serif;
+}
+@media (max-width: 991px) {
+  .header-description {
+    white-space: initial;
+  }
+  .file-types {
+    white-space: initial;
+  }
+  .upload-area {
+    padding: 20px;
+  }
+}

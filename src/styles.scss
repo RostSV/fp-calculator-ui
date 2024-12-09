@@ -16,6 +16,12 @@
   align-items: center;
 }
 
+
+
+.b-shadow{
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
 //FONTS
 $font-family-sans-serif: 'Barlow', sans-serif;
 $font-family-serif: 'Mulish', sans-serif;
@@ -40,6 +46,8 @@ $green: #2C6E49;
 $red: #BC412B;
 $gray: #F3F2F7;
 $green-light: rgb(0,176,116,0.25);
+$gray-light: #F3F2F7;
+$gray-dark: #B0B7BD;
 
 $primary: $green;
 $secondary: $white;
@@ -61,6 +69,15 @@ $spacers: (
   6: $spacer * 4,
   7: $spacer * 5,
 );
+
+//Logo
+.logo-link{
+  text-decoration: none;
+  color: $black;
+  span{
+    color: $green;
+  }
+}
 
 //Buttons
 $btn-font-family: $font-family-serif;
@@ -89,6 +106,49 @@ $grid-breakpoints: (
   xxl: 1400px
 );
 $grid-gutter-width: 0;
+
+
+//Inputs
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-bottom: 2px solid $green-light !important;
+}
+
+input{
+  border-bottom: 2px solid inherit !important;
+
+}
+
+input, textarea,select{
+  transition: 0.3s ease all;
+}
+
+
+
+//Table
+.p-datatable{
+  border: none;
+  border-radius: 1rem;
+  .p-datatable-header{
+    border-radius: 1rem;
+    background:red;
+  }
+
+  .p-datatable-thead{
+    border-bottom: 3px solid $gray-light;
+
+    th{
+      background: white;
+    }
+    tr{
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+  }
+}
+.p-paginator-bottom{
+  border: none !important;
+}
 
 .font-mulish{
   font-family: $font-family-serif;
@@ -142,6 +202,8 @@ input{
   }
 
   .navbar-item{
+    text-decoration: none;
+    color: $black;
     border-radius: 5px;
     fill: var(--white);
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
@@ -312,16 +374,14 @@ input{
   }
 }
 
+.header{
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
 
 //Compare view
 .compare{
   width: 100%;
-
-  .header{
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-  }
-
   .topbar{
     margin-top: 20px;
     .compare-controls{
@@ -352,21 +412,145 @@ input{
   }
 
   .history{
-    .table{
+    .content{
+      padding: 10px;
       background: $white;
+      border-radius: 1rem;
     }
   }
 }
 
 @media (max-width: 576px){
-  .splitter{
-    display: none;
+  .topbar{
+    .compare-controls{
+      .splitter{
+        display: none;
+      }
+      >:first-child{
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+}
+
+.message-container-main{
+  z-index: 1100 !important;
+  opacity: 1 !important;
+}
+
+.file-info{
+  border: 2px solid $gray-dark;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 12px;
+  .file-info-wrapper{
+    .file-details{
+      margin-left: 10px;
+    }
+  }
+}
+
+.compare-result{
+  .files{
+    border-radius: 1rem;
+    .file-info{
+      border: none !important;
+    }
+  }
+  .plagiat-result{
+    .inner{
+      background: white;
+      border-radius: 1rem;
+      text-align: center;
+      align-items: center;
+      justify-content: center !important;
+      display: flex;
+      h2{
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px){
+  .compare-result{
+    .files{
+      >:last-child{
+          border-left: 3px solid $gray-light;
+        }
+      .file-info{
+        justify-content: center;
+      }
+
+    }
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 800px){
+  .compare-result{
+    .plagiat-result{
+      margin-top: 10px;
+    }
+  }
+}
+
+.side-by-side-result{
+  .head{
+    h5{
+      margin:0!important;
+      font-weight: 600;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    .inner-search{
+      position: relative;
+      margin-left: 10px;
+      .p-inputtext{
+        background: $white;
+        border: none;
+        height: 24px;
+        width: 120px;
+      }
+      i{
+        position: absolute;
+        right: 10px;
+        top: 5px;
+      }
+    }
+  }
+
+  .content-wrapper{
+    .info-block{
+      background: $white;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      .name{
+        font-weight: 600;
+      }
+
+      .inner-info{
+        font-size: 1.3rem;
+        span{
+          color: $gray-dark;
+        }
+      }
+
+    }
   }
 }
 
 
 
+
 @import "bootstrap/scss/bootstrap.scss";
-@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "assets/theme/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

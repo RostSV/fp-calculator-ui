@@ -1,0 +1,44 @@
+<app-container>
+  <div class="compare-result">
+    <div class="topbar">
+      <h4 class="header">Result of comparing #1</h4>
+      <div class="row row-cols-1">
+        <div class="files bg-white row col-12 col-md-7 p-2">
+          <div class="col col-12 col-md-6">
+            <app-file-card [file]="data.files[0]"></app-file-card>
+          </div>
+          <div class="col col-12 col-md-6">
+            <app-file-card [file]="data.files[1]"></app-file-card>
+          </div>
+        </div>
+        <div class="plagiat-result row col-12 col-md-5 justify-content-end">
+          <div class="inner col-12 col-md-6 justify-content-center">
+            <h2>{{data.plagiarism}}%</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="side-by-side-result">
+      <div class="head d-center mt-4">
+        <div>
+          <h5>Side by side</h5>
+        </div>
+        <div class="inner-search b-shadow">
+          <input
+            type="text"
+            pInputText
+            variant="filled" />
+          <i class="fa-solid fa-magnifying-glass s-icon"></i>
+        </div>
+      </div>
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-3 mt-2">
+        <div *ngFor="let item of data.values" class="col content-wrapper">
+          <div class="info-block b-shadow">
+            <h6 class="name">{{ item.name }}</h6>
+            <div class="inner-info">{{item.value1 | number:'1.0-2'}} <span>|</span> {{item.value2 | number:'1.0-2'}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-container>

@@ -5,12 +5,15 @@ import {DashboardComponent} from './components/views/dashboard/dashboard.compone
 import {
   CompareAssignmentComponent
 } from './components/views/compare-assignment/compare-assignment.component';
+import {CompareResultComponent} from "./components/views/compare-result/compare-result.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'compare', component: CompareAssignmentComponent}
+  {path: 'compare', component: CompareAssignmentComponent},
+  {path: 'compare-result', component: CompareResultComponent},
+  {path: '**', redirectTo: '/login'}
 
 ];
 

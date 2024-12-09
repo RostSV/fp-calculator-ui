@@ -2,9 +2,9 @@
   <div class="compare">
     <div class="topbar">
       <h4 class="header">Compare student's works</h4>
-      <div class="compare-controls row bg-white">
+      <div class="compare-controls row bg-white b-shadow">
         <div class="col col-12 col-sm-5 d-center">
-          <button class="btn btn-primary btn-lg">Upload files</button>
+          <button (click)="openUploadFilesModal()" class="btn btn-primary btn-lg">Upload files</button>
         </div>
         <div class="col col-2 splitter d-center">
           <span>or</span>
@@ -17,36 +17,41 @@
     </div>
 
     <div class="history">
-      <h4 class="header mt-3">Compare student's works</h4>
-      <table class="table">
-        <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>111</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>111</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>111</td>
-        </tr>
-        </tbody>
-      </table>
+      <h4 class="header mt-3">History</h4>
+      <div class="content b-shadow">
+        <div>
+          <p-table [value]="history"
+                   [tableStyle]="{'min-width': '60rem'}"
+                   paginator="true"
+                   [rows]="rows"
+          >
+            <ng-template pTemplate="header">
+              <tr>
+                <th pSortableColumn="file1" style="width:20%">
+                  File <p-sortIcon field="file1" />
+                </th>
+                <th pSortableColumn="file2" style="width:20%">
+                  File <p-sortIcon field="file2" />
+                </th>
+                <th pSortableColumn="date" style="width:20%">
+                  Date <p-sortIcon field="date" />
+                </th>
+                <th pSortableColumn="plagiarism" style="width:20%">
+                  Plagiarism <p-sortIcon field="plagiarism" />
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-item>
+              <tr>
+                <td>{{ item.file1 }}</td>
+                <td>{{ item.file2 }}</td>
+                <td>{{ item.date }}</td>
+                <td>{{ item.plagiarism }}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
     </div>
 
   </div>

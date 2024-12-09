@@ -1,10 +1,10 @@
 import {Component, HostListener} from '@angular/core';
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-container',
   standalone: false,
-
-  templateUrl: './container.component.html'
+  templateUrl: './container.component.html',
 })
 export class ContainerComponent {
   largeScreen: boolean;
