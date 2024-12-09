@@ -6,4 +6,45 @@
       <app-action-card (click)="goTo('compare')" [title]="'Compare assignments'" [imageName]="'computer'"></app-action-card>
     </div>
   </section>
+  <div class="table-component">
+    <h4 class="header mt-4 mb-2">History</h4>
+    <div class="content b-shadow">
+      <div>
+        <p-table [value]="students"
+                 [tableStyle]="{'min-width': '60rem'}"
+                 paginator="true"
+                 [rows]="rows"
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th pSortableColumn="name" style="width:23%">
+                Name <p-sortIcon field="name" />
+              </th>
+              <th pSortableColumn="lastActivity" style="width:20%">
+                Last activity <p-sortIcon field="lastActivity" />
+              </th>
+              <th pSortableColumn="activeAssignment" style="width:25%">
+                Active assignment <p-sortIcon field="activeAssignment" />
+              </th>
+              <th pSortableColumn="studyGroup" style="width:20%">
+                Study group <p-sortIcon field="studyGroup" />
+              </th>
+              <th pSortableColumn="grade" style="width:12%">
+                Grade <p-sortIcon field="grade" />
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-student>
+            <tr>
+              <td>{{ student.name }}</td>
+              <td>{{ student.lastActivity }}</td>
+              <td>{{ student.activeAssignment }}</td>
+              <td>{{ student.studyGroup }}</td>
+              <td>{{ student.studyGroupGrade }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
 </app-container>

@@ -1,5 +1,6 @@
 import {Component, HostListener} from '@angular/core';
 import {Router} from '@angular/router';
+import {student_list} from "../../../interfaces/data";
 
 @Component({
   selector: 'app-dashboard',
@@ -9,6 +10,8 @@ import {Router} from '@angular/router';
 })
 export class DashboardComponent {
   largeScreen: boolean;
+  rows = 20;
+  students = student_list;
   constructor(private router: Router) {
     this.largeScreen = window.innerWidth > 800;
   }

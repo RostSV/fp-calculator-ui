@@ -10,6 +10,13 @@
   background: #F3F2F7;
 }
 
+.container-scrollable {
+  overflow-y: auto;
+  height: 100vh;
+}
+
+
+
 .d-center{
   display: flex;
   justify-content: center;
@@ -107,6 +114,21 @@ $grid-breakpoints: (
 );
 $grid-gutter-width: 0;
 
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.sticky-blur {
+  background: $white;
+  backdrop-filter: blur(10px);
+  .search{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+}
 
 //Inputs
 input:focus, textarea:focus, select:focus {
@@ -410,13 +432,13 @@ input{
       }
     }
   }
+}
 
-  .history{
-    .content{
-      padding: 10px;
-      background: $white;
-      border-radius: 1rem;
-    }
+.table-component{
+  .content{
+    padding: 10px;
+    background: $white;
+    border-radius: 1rem;
   }
 }
 
