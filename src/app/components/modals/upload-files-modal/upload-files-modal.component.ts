@@ -43,7 +43,7 @@ export class UploadFilesModalComponent {
   }
 
   onUploadClick() {
-    this.uploadTargetButton.nativeElement.click();
+    this.uploadTargetButton?.nativeElement.click();
   }
 
   private uploadFiles(files: File[]): void {

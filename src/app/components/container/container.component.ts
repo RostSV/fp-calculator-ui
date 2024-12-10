@@ -17,7 +17,7 @@ export class ContainerComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.checkSticky();
-    this.scrollContainer.nativeElement.addEventListener('scroll', this.checkSticky.bind(this));
+    this.scrollContainer?.nativeElement?.addEventListener('scroll', this.checkSticky.bind(this));
   }
 
   @HostListener('window:resize', ['$event'])
@@ -26,7 +26,7 @@ export class ContainerComponent implements AfterViewInit {
   }
 
   checkSticky() {
-    const searchElementTop = this.searchElement.nativeElement.getBoundingClientRect().top;
+    const searchElementTop = this.searchElement?.nativeElement.getBoundingClientRect().top;
     this.isSearchSticky = searchElementTop <= 0;
   }
 }

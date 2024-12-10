@@ -8,6 +8,8 @@ import {Component, HostListener} from '@angular/core';
 })
 export class SidebarComponent {
   largeScreen: boolean;
+  email: string | null = localStorage.getItem('email');
+  user: string | null = localStorage.getItem('user');
 
   constructor() {
     this.largeScreen = window.innerWidth > 800;

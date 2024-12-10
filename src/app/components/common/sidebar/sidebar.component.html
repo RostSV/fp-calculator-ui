@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md bg-body-tertiary">
-  <div class="container">
+  <div class="container h-100">
     <div class="d-flex justify-content-center align-items-center">
       <img ngSrc="assets/head.svg" alt="head" class="img-fluid me-2" id="img-big" height="60" width="60">
       <a class="logo-link" [routerLink]="'/dashboard'" ><h2 class="fw-bold m-0">fp<span class="text-primary">.</span>learn</h2></a>
@@ -24,7 +24,16 @@
         <i class="fa-solid fa-briefcase"></i>
         Assignments
       </a>
+      <div class="user-badge d-flex align-items-end">
+        <i class="fa-regular fa-user"></i>
+        <div class="inner-content ms-2">
+          <h6 class="m-0">{{user}}</h6>
+          <p>{{email}}</p>
+        </div>
+      </div>
+
       <app-search *ngIf="!largeScreen"></app-search>
+
     </div>
   </div>
 </nav>

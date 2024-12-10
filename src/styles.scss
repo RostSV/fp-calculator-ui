@@ -145,6 +145,45 @@ input, textarea,select{
   transition: 0.3s ease all;
 }
 
+//Users
+.user-badge{
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  p{
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin: 0;
+    font-family: 'Barlow', 'sans-serif';
+  }
+  i{
+    color: $gray-dark;
+    border: 2px solid $gray-dark;
+    border-radius: 5px;
+    padding: 5px 5px 1px 5px;
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 800px){
+  .user-badge{
+    position: relative;
+    left: 50%;
+    top:20px;
+    transform: translateX(-50%);
+    justify-content: center !important;
+  }
+
+  .search{
+   .input-container{
+     margin-top:20px !important;
+   }
+    .helpers{
+      justify-content: center !important;
+    }
+  }
+
+}
 
 
 //Table
@@ -211,6 +250,7 @@ input{
     .navbar-collapse{
       background: $white;
       border: 2px solid $green-light;
+      position: relative;
       border-radius: 1rem;
       margin-top: 20px;
       padding: 20px;
@@ -352,6 +392,8 @@ input{
     flex-wrap: wrap;
     width: 100%;
   }
+
+
 }
 
 

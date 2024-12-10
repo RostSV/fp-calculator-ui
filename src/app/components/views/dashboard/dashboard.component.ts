@@ -10,7 +10,7 @@ import {student_list} from "../../../interfaces/data";
 })
 export class DashboardComponent {
   largeScreen: boolean;
-  rows = 20;
+  rows = 10;
   students = student_list;
   constructor(private router: Router) {
     this.largeScreen = window.innerWidth > 800;
